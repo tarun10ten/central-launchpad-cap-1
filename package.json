@@ -1,5 +1,5 @@
 {
-    "name": "cap-launchpad",
+    "name": "cap-launchpad-1",
     "version": "1.0.0",
     "description": "A simple CAP project.",
     "repository": "<Add your repository here>",
@@ -28,7 +28,7 @@
         },
         "requires": {
             "db": {
-                "kind": "sql"
+                "kind": "hana"
             }
         }
     }

@@ -1,9 +1,9 @@
 ## Generated mta.yaml based on template version 0.4.0
-## appName = cap-launchpad
+## appName = cap-launchpad-1
 ## language=nodejs; multiTenant=false
 ## approuter=
 _schema-version: '3.1'
-ID: cap-launchpad
+ID: cap-launchpad-1
 version: 1.0.0
 description: "A simple CAP project."
 parameters:
@@ -59,9 +59,9 @@ modules:
      requires:
      - artifacts:
        - fiori-content.zip
-       name: fiori
+       name: fiori_app
        target-path: resources/
- - name: fiori
+ - name: fiori_app
    type: html5
    path: app/fiori
    build-parameters:
@@ -71,7 +71,7 @@ modules:
      - npm run build
      supported-platforms: []              
  # --------------------- SERVER MODULE ------------------------
- - name: cap-launchpad-srv
+ - name: cap-launchpad-1-srv
  # ------------------------------------------------------------
    type: nodejs
    path: gen/srv
@@ -80,7 +80,7 @@ modules:
      disk-quota: 1024M   
    requires:
     # Resources extracted from CAP configuration
-    - name: cap-launchpad-db
+    - name: cap-launchpad-1-db
     - name: uaa_fiori
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
@@ -88,7 +88,7 @@ modules:
         srv-url: ${default-url}
 
  # -------------------- SIDECAR MODULE ------------------------
- - name: cap-launchpad-db-deployer
+ - name: cap-launchpad-1-db-deployer
  # ------------------------------------------------------------
    type: hdb
    path: gen/db  
@@ -96,7 +96,7 @@ modules:
      buildpack: nodejs_buildpack
    requires:
     # 'hana' and 'xsuaa' resources extracted from CAP configuration
-    - name: cap-launchpad-db
+    - name: cap-launchpad-1-db
     - name: uaa_fiori
 
 
@@ -104,7 +104,7 @@ resources:
  # services extracted from CAP configuration
  # 'service-plan' can be configured via 'cds.requires.<name>.vcap.plan'
 # ------------------------------------------------------------
- - name: cap-launchpad-db
+ - name: cap-launchpad-1-db
 # ------------------------------------------------------------
    type: com.sap.xs.hdi-container
    parameters:
@@ -126,7 +126,7 @@ resources:
          subaccount:
            existing_destinations_policy: update
            destinations:
-             - Name: cap-launchpad
+             - Name: cap-launchpad-1
                Description: CAP sample service
                Authentication: NoAuthentication
                ProxyType: Internet

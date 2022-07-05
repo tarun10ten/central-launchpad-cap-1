@@ -1,7 +1,7 @@
 {
-	"name": "fiori",
+	"name": "fiori_app",
 	"version": "0.0.1",
-	"buildTimestamp": "202204110525",
+	"buildTimestamp": "202206011357",
 	"scmRevision": "",
 	"libraries": []
 }
